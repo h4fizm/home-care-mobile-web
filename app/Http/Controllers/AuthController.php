@@ -29,10 +29,10 @@ class AuthController extends Controller
             return redirect()->route('home'); // Arahkan ke HomeController
         }
 
-        throw ValidationException::withMessages([
-            'email' => 'Email atau password salah.',
-        ]);
+        return redirect()->route('login')
+            ->with('error', 'Email atau password salah.');
     }
+
 
 
     // Menampilkan halaman register

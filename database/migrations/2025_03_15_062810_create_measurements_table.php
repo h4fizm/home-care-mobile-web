@@ -12,10 +12,12 @@ return new class extends Migration {
     {
         Schema::create('measurements', function (Blueprint $table) {
             $table->id();
+            $table->integer('age')->nullable();
+            $table->enum('gender', ['laki-laki', 'perempuan'])->nullable();
             $table->integer('sistolik');
             $table->integer('diastolik');
             $table->integer('bpm');
-            $table->foreignId('id_patient')->constrained('patients')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

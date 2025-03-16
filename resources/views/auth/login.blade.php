@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laman Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body class="bg-gray-100 flex items-center justify-center min-h-screen px-4">
     <div class="bg-white w-full max-w-md rounded-3xl shadow-xl p-6">
@@ -16,6 +17,18 @@
       <!-- Form Login -->
       <div class="bg-gray-50 p-4 rounded-lg shadow">
         <h3 class="text-lg font-semibold mb-3 text-center">Login</h3>
+        
+        @if(session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Login Gagal!',
+                text: '{{ session("error") }}',
+                confirmButtonColor: '#d33'
+            });
+        </script>
+        @endif
+
         <form action="{{ route('login') }}" method="POST" class="space-y-3">
           @csrf
           <div>
