@@ -14,9 +14,9 @@ return new class extends Migration {
             $table->id();
             $table->integer('age')->nullable();
             $table->enum('gender', ['laki-laki', 'perempuan'])->nullable();
-            $table->integer('sistolik');
-            $table->integer('diastolik');
-            $table->integer('bpm');
+            $table->float('sistolik');
+            $table->float('diastolik');
+            $table->float('bpm');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -26,9 +26,9 @@ class HomeController extends Controller
         $request->validate([
             'age' => 'required|integer|min:1',
             'gender' => 'required',
-            'sistolik' => 'required|integer|min:50|max:250',
-            'diastolik' => 'required|integer|min:30|max:150',
-            'bpm' => 'required|integer|min:30|max:200',
+            'sistolik' => 'required',
+            'diastolik' => 'required',
+            'bpm' => 'required',
         ]);
 
         try {

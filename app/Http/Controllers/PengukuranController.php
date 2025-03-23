@@ -34,9 +34,9 @@ class PengukuranController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'sistolik' => 'required|integer',
-            'diastolik' => 'required|integer',
-            'bpm' => 'required|integer',
+            'sistolik' => 'required',
+            'diastolik' => 'required',
+            'bpm' => 'required',
         ]);
 
         Measurement::create([
